@@ -162,16 +162,6 @@
   }
 }
 
-/* Blinking phone icon (mobile sticky "تماس فوری" button) */
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.15;
-  }
-}
-
 /* Comment entrance animation (article comments section) */
 @keyframes commentIn {
   from {
@@ -202,8 +192,4 @@
   background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
   background-size: 200% 100%;
   animation: shimmer 3s infinite;
-}
-
-.animate-blink {
-  animation: blink 1.2s ease-in-out infinite;
 }

@@ -110,15 +110,18 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({
           href={`tel:${CLINIC_INFO.phone.replace(/[^0-9]/g, "")}`}
           className="flex-1 py-2 px-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-slate-800 text-xs font-bold flex flex-col items-center justify-center gap-1"
         >
-          <Phone className="w-4 h-4 text-teal-600 animate-blink" />
+          <span className="relative inline-flex items-center justify-center">
+            <span className="absolute -inset-1 rounded-full bg-teal-400/40 animate-ping" />
+            <Phone className="relative w-4 h-4 text-teal-600" />
+          </span>
           <span>تماس فوری</span>
         </a>
 
         <button
           onClick={onOpenCalculator}
-          className="cursor-pointer flex-[1.4] py-2 px-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white text-xs font-black shadow-md shadow-amber-600/25 flex items-center justify-center gap-1.5"
+          className="cursor-pointer shrink-0 py-1.5 px-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white text-[11px] font-black shadow-md shadow-amber-600/25 flex items-center justify-center gap-1"
         >
-          <Calculator className="w-4 h-4 text-amber-100" />
+          <Calculator className="w-3.5 h-3.5 text-amber-100" />
           <span>محاسبه هزینه</span>
         </button>
       </div>

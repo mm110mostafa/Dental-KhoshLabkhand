@@ -209,8 +209,8 @@ export const BEFORE_AFTER_CASES: BeforeAfterCase[] = [
     duration: "تنها یک جلسه (۴ ساعت)",
     doctor: "دکتر سارا رستمی",
     description: "اصلاح لبه‌های ساییده شده و ناهماهنگی خط لبخند با تکنیک میکرولیرینگ بدون نیاز به تزریق بی‌حسی و بدون دست‌خوردن ساختار اصلی دندان.",
-    beforeImg: "/images/smile-makeover-before.jpg",
-    afterImg: "/images/smile-makeover-after.jpg",
+    beforeImg: "/images/hero-dentist-banner.jpg",
+    afterImg: "/images/hero-dentist-banner.jpg",
     tags: ["یک‌روزه", "فاقد درد و بی‌حسی", "پالیش آینه‌ای فوق درخشان"]
   },
   {
@@ -221,8 +221,8 @@ export const BEFORE_AFTER_CASES: BeforeAfterCase[] = [
     duration: "یک جلسه جراحی بدون بخیه",
     doctor: "دکتر علیرضا خلیلی",
     description: "درمان بی‌دندانی قدامی بر اثر تروما قدیمی. کاشت دیجیتال بدون برش لثه و تحویل فوری روکش موقت زیبا در همان روز، و سپس نصب روکش زیرکونیا نهایی.",
-    beforeImg: "/images/smile-makeover-before.jpg",
-    afterImg: "/images/smile-makeover-after.jpg",
+    beforeImg: "/images/digital-dentistry.jpg",
+    afterImg: "/images/digital-dentistry.jpg",
     tags: ["بدون درد و خونریزی", "تحویل روکش در یک روز", "گارانتی مادام‌العمر"]
   },
   {
@@ -233,8 +233,8 @@ export const BEFORE_AFTER_CASES: BeforeAfterCase[] = [
     duration: "یک جلسه ۴۵ دقیقه‌ای",
     doctor: "دکتر سارا رستمی",
     description: "رفع لبخند لثه‌ای با افزایش طول تاج بدون استفاده از تیغ جراحی، همراه با روشن‌شدن ۷ شید رنگی مینا و بازگشت شادابی به بافت لثه.",
-    beforeImg: "/images/smile-makeover-before.jpg",
-    afterImg: "/images/smile-makeover-after.jpg",
+    beforeImg: "/images/painless-care.jpg",
+    afterImg: "/images/painless-care.jpg",
     tags: ["بدون خونریزی", "ترمیم فوق‌العاده سریع", "سفیدی درخشان طبیعی"]
   }
 ];
@@ -264,8 +264,8 @@ export const PORTFOLIO_CASES: BeforeAfterCase[] = [
     duration: "یک جلسه (۴ ساعت)",
     doctor: "دکتر سارا رستمی",
     description: "بازسازی لبه‌های ساییده و هم‌ترازی خط لبخند بدون تراش دندان.",
-    beforeImg: "/images/smile-makeover-before.jpg",
-    afterImg: "/images/smile-makeover-after.jpg",
+    beforeImg: "/images/painless-care.jpg",
+    afterImg: "/images/hero-dentist-banner.jpg",
     tags: ["یک‌روزه", "بدون درد", "پالیش آینه‌ای"]
   },
   {
@@ -276,7 +276,7 @@ export const PORTFOLIO_CASES: BeforeAfterCase[] = [
     duration: "یک جلسه بدون بخیه",
     doctor: "دکتر علیرضا خلیلی",
     description: "کاشت دیجیتال با سرجیکال گاید و تحویل روکش موقت در همان روز.",
-    beforeImg: "/images/smile-makeover-before.jpg",
+    beforeImg: "/images/digital-dentistry.jpg",
     afterImg: "/images/smile-makeover-after.jpg",
     tags: ["بدون برش لثه", "فوری", "گارانتی مادام‌العمر"]
   },
@@ -288,8 +288,8 @@ export const PORTFOLIO_CASES: BeforeAfterCase[] = [
     duration: "یک جلسه ۴۵ دقیقه‌ای",
     doctor: "دکتر سارا رستمی",
     description: "رفع لبخند لثه‌ای و روشن‌کردن ۷ شید رنگی مینا در یک جلسه.",
-    beforeImg: "/images/smile-makeover-before.jpg",
-    afterImg: "/images/smile-makeover-after.jpg",
+    beforeImg: "/images/clinic-lounge.jpg",
+    afterImg: "/images/hero-dentist-banner.jpg",
     tags: ["بدون خونریزی", "سفیدی درخشان", "ترمیم سریع"]
   },
   {
@@ -301,7 +301,7 @@ export const PORTFOLIO_CASES: BeforeAfterCase[] = [
     doctor: "دکتر علیرضا خلیلی",
     description: "صاف‌کردن کامل به هم ریختگی دندان‌ها با پلاک‌های نامرئی و اسکن سه‌بعدی.",
     beforeImg: "/images/smile-makeover-before.jpg",
-    afterImg: "/images/smile-makeover-after.jpg",
+    afterImg: "/images/hero-dentist-banner.jpg",
     tags: ["نامرئی", "قابل جداکردن", "بدون سیم فلزی"]
   },
   {
@@ -312,7 +312,7 @@ export const PORTFOLIO_CASES: BeforeAfterCase[] = [
     duration: "۳ جلسه (۱۰ روز کاری)",
     doctor: "دکتر سارا رستمی",
     description: "بازسازی کامل لبخند با هماهنگی رنگ و فرم دندان‌های فک بالا و پایین.",
-    beforeImg: "/images/smile-makeover-before.jpg",
+    beforeImg: "/images/painless-care.jpg",
     afterImg: "/images/smile-makeover-after.jpg",
     tags: ["۲۰ واحد", "زیرکونیا", "هماهنگی کامل"]
   },
@@ -324,8 +324,8 @@ export const PORTFOLIO_CASES: BeforeAfterCase[] = [
     duration: "۲ جلسه",
     doctor: "دکتر علیرضا خلیلی",
     description: "اصلاح عمق لبخند لثه‌ای با جراحی ظریف و بازطراحی خط لبخند.",
-    beforeImg: "/images/smile-makeover-before.jpg",
-    afterImg: "/images/smile-makeover-after.jpg",
+    beforeImg: "/images/digital-dentistry.jpg",
+    afterImg: "/images/hero-dentist-banner.jpg",
     tags: ["لبخند لثه‌ای", "جراحی دیجیتال", "نتیجه پایدار"]
   },
   {
@@ -336,7 +336,7 @@ export const PORTFOLIO_CASES: BeforeAfterCase[] = [
     duration: "۲ جلسه",
     doctor: "دکتر سارا رستمی",
     description: "سفیدکردن عمیق مینا و بازسازی دندان‌های آسیب‌دیده قدامی به‌صورت طبیعی.",
-    beforeImg: "/images/smile-makeover-before.jpg",
+    beforeImg: "/images/clinic-lounge.jpg",
     afterImg: "/images/smile-makeover-after.jpg",
     tags: ["بلیچینگ", "ترمیم طبیعی", "۷ شید روشن‌تر"]
   },
@@ -348,7 +348,7 @@ export const PORTFOLIO_CASES: BeforeAfterCase[] = [
     duration: "۴ جلسه (۳ هفته)",
     doctor: "دکتر علیرضا خلیلی",
     description: "تحویل کامل دندان‌های فک بالا و پایین روی ۸ ایمپلنت در یک روز.",
-    beforeImg: "/images/smile-makeover-before.jpg",
+    beforeImg: "/images/hero-dentist-banner.jpg",
     afterImg: "/images/smile-makeover-after.jpg",
     tags: ["آل-آن-فور", "همان‌روز", "لبخند کامل"]
   }

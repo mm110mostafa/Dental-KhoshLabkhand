@@ -70,10 +70,10 @@ export const HomePage: React.FC<HomePageProps> = ({
             طراحی می‌کند. کافیست یک تماس داشته باشید.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div className="flex flex-row flex-wrap sm:flex-nowrap items-center justify-center gap-2.5 sm:gap-3">
             <button
               onClick={onOpenBooking}
-              className="cursor-pointer inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl bg-white text-teal-800 font-black text-sm shadow-xl shadow-teal-950/30 hover:shadow-2xl hover:scale-[1.02] active:scale-95 transition-all"
+              className="cursor-pointer inline-flex items-center justify-center gap-2 flex-1 sm:flex-none px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-2xl bg-white text-teal-800 font-black text-xs sm:text-sm shadow-xl shadow-teal-950/30 hover:shadow-2xl hover:scale-[1.02] active:scale-95 transition-all"
             >
               <Calendar className="w-4 h-4" />
               <span>رزرو نوبت آنلاین</span>
@@ -81,7 +81,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
             <a
               href={`tel:${CLINIC_INFO.phone.replace(/[^0-9]/g, "")}`}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/25 transition-all"
+              className="inline-flex items-center justify-center gap-2 flex-1 sm:flex-none px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm border border-white/25 transition-all"
             >
               <PhoneCall className="w-4 h-4" />
               <span>{CLINIC_INFO.phone}</span>

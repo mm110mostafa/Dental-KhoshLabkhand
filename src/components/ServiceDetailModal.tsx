@@ -92,13 +92,13 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
         </div>
 
         {/* Footer actions */}
-        <div className="p-4 sm:p-6 bg-stone-50 border-t border-stone-200 flex flex-col sm:flex-row gap-3">
+        <div className="p-4 sm:p-6 bg-stone-50 border-t border-stone-200 flex flex-row gap-2.5">
           <button
             onClick={() => {
               onClose();
               onBook(service.title);
             }}
-            className="cursor-pointer flex-1 py-3 px-6 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2"
+            className="cursor-pointer flex-1 py-2.5 px-3 sm:px-6 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-1.5"
           >
             <Calendar className="w-4 h-4" />
             <span>رزرو نوبت برای این درمان</span>
@@ -106,7 +106,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
 
           <button
             onClick={onClose}
-            className="cursor-pointer py-3 px-6 rounded-xl border border-stone-300 text-slate-700 text-sm font-bold hover:bg-stone-100 transition-colors"
+            className="cursor-pointer shrink-0 py-2.5 px-4 sm:px-6 rounded-xl border border-stone-300 text-slate-700 text-xs sm:text-sm font-bold hover:bg-stone-100 transition-colors"
           >
             بستن پنجره
           </button>

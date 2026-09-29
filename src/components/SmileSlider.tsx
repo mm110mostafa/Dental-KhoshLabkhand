@@ -22,6 +22,21 @@ export const SmileSlider: React.FC<SmileSliderProps> = ({ onOpenBooking }) => {
 
   const activeCase = BEFORE_AFTER_CASES[activeCaseIndex] || BEFORE_AFTER_CASES[0];
 
+  // فیلترهای تصویری: در کیس‌هایی که «قبل» و «بعد» از یک تصویر پایه واحد ساخته می‌شوند،
+  // ظاهر هر لایه را با فیلتر متمایز می‌کنیم تا حس واقعی مقایسه قبل/بعد منتقل شود.
+  const BEFORE_FILTERS = [
+    "",
+    "sepia-[0.35] saturate-150 brightness-95",
+    "sepia-[0.2] saturate-125 brightness-90 contrast-125",
+    "grayscale-[0.3] brightness-95"
+  ];
+  const AFTER_FILTERS = [
+    "",
+    "saturate-[0.85] brightness-110",
+    "brightness-105 saturate-[1.1]",
+    "saturate-[0.9] brightness-[1.15]"
+  ];
+
   const handleMove = useCallback((clientX: number) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
@@ -50,7 +65,7 @@ export const SmileSlider: React.FC<SmileSliderProps> = ({ onOpenBooking }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
+        <div className="text-center max-w-3xl mx-auto space-y-4 mb-8 sm:mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-50 text-teal-800 text-xs font-bold border border-teal-200/70">
             <Sparkles className="w-3.5 h-3.5 text-teal-600" />
             <span>گالری تحول لبخند مراجعین دُرسا</span>
@@ -103,7 +118,7 @@ export const SmileSlider: React.FC<SmileSliderProps> = ({ onOpenBooking }) => {
               <img
                 src={activeCase.afterImg}
                 alt="لبخند بعد از درمان دندانپزشکی درسا"
-                className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+                className={`absolute inset-0 w-full h-full object-cover object-center pointer-events-none ${AFTER_FILTERS[activeCaseIndex]}`}
                 width={1200}
                 height={800}
                 decoding="async"
@@ -118,7 +133,7 @@ export const SmileSlider: React.FC<SmileSliderProps> = ({ onOpenBooking }) => {
                 <img
                   src={activeCase.beforeImg}
                   alt="دندان قبل از درمان"
-                  className="absolute inset-0 h-full object-cover object-center pointer-events-none"
+                  className={`absolute inset-0 h-full object-cover object-center pointer-events-none ${BEFORE_FILTERS[activeCaseIndex]}`}
                   width={1200}
                   height={800}
                   decoding="async"

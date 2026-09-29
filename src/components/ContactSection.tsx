@@ -170,7 +170,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenBooking })
                 </div>
               </div>
 
-              <div className="p-4 flex flex-col sm:flex-row gap-2.5">
+              <div className="p-4 flex flex-row gap-2.5">
                 <a
                   href={`https://wa.me/${CLINIC_INFO.whatsapp.replace(/[^0-9]/g, "")}`}
                   target="_blank"

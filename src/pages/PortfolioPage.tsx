@@ -7,6 +7,23 @@ interface PortfolioPageProps {
 }
 
 export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onOpenBooking }) => {
+  // فیلترهای تصویری: تا زمان جایگزینی تصاویر اختصاصی هر مورد، ظاهر «قبل» و «بعد»
+  // هر کارت را با فیلترهای متفاوت متمایز می‌کنیم.
+  const BEFORE_FILTERS = [
+    "sepia-[0.35] saturate-150 brightness-95",
+    "sepia-[0.2] saturate-125 brightness-90 contrast-125",
+    "grayscale-[0.3] brightness-95",
+    "saturate-200 brightness-90"
+  ];
+  const AFTER_FILTERS = [
+    "saturate-[0.85] brightness-110",
+    "brightness-105 saturate-[1.1]",
+    "saturate-[0.9] brightness-[1.15]"
+  ];
+  const beforeFilter = (i: number) => (i === 0 ? "" : BEFORE_FILTERS[(i - 1) % BEFORE_FILTERS.length]);
+  const afterFilter = (i: number) => (i === 0 ? "" : AFTER_FILTERS[(i - 1) % AFTER_FILTERS.length]);
+
+
   return (
     <section className="py-16 sm:py-20 bg-stone-50/60 relative overflow-hidden">
       {/* Ambient background glows */}
@@ -41,7 +58,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onOpenBooking }) =
                   <img
                     src={item.beforeImg}
                     alt={`${item.title} - قبل از درمان`}
-                    className="absolute inset-0 w-full h-full object-cover object-center"
+                    className={`absolute inset-0 w-full h-full object-cover object-center ${beforeFilter(idx)}`}
                     loading="lazy"
                     decoding="async"
                   />
@@ -53,7 +70,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onOpenBooking }) =
                   <img
                     src={item.afterImg}
                     alt={`${item.title} - بعد از درمان`}
-                    className="absolute inset-0 w-full h-full object-cover object-center"
+                    className={`absolute inset-0 w-full h-full object-cover object-center ${afterFilter(idx)}`}
                     loading="lazy"
                     decoding="async"
                   />

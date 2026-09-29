@@ -89,11 +89,13 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({
         </a>
       </div>
 
-      {/* Desktop: Scroll-to-top pinned to the BOTTOM LEFT, 20px from the edge */}
+      {/* Scroll-to-top pinned to the BOTTOM LEFT of every page
+          (desktop: 24px above the edge / mobile: above the sticky action bar),
+          appears only after scrolling down the page */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="cursor-pointer fixed bottom-6 left-5 z-40 hidden sm:block bg-white hover:bg-stone-50 text-slate-700 p-3 rounded-full shadow-md border border-stone-200 transition-all hover:scale-105 active:scale-95"
+          className="cursor-pointer fixed bottom-16 left-3 sm:bottom-6 sm:left-5 z-40 bg-white hover:bg-stone-50 text-slate-700 p-3 rounded-full shadow-md border border-stone-200 transition-all hover:scale-105 active:scale-95 animate-fade-in"
           title="بازگشت به ابتدای صفحه"
           aria-label="بازگشت به بالای صفحه"
         >

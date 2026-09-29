@@ -51,11 +51,19 @@ export const FaqSection: React.FC = () => {
                   />
                 </button>
 
-                {isOpen && (
-                  <div className="px-6 pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-stone-100 pt-4 text-right animate-fade-in">
-                    {item.a}
+                {/* Smooth open/close accordion: content stays mounted and animates
+                    between grid-rows 0fr ↔ 1fr so both opening and closing are eased. */}
+                <div
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="overflow-hidden min-h-0">
+                    <div className="px-6 pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-stone-100 pt-4 text-right">
+                      {item.a}
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}

@@ -59,13 +59,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Heading */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 md:mb-10">
           <div className="space-y-3 text-right">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100/70 text-teal-900 text-xs font-bold border border-teal-200">
               <Sparkles className="w-3.5 h-3.5 text-teal-700" />
               <span>دپارتمان‌های فوق‌تخصصی</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight whitespace-nowrap">
               خدمات کلینیک دندانپزشکی دُرسا
             </h2>
             <p className="text-slate-600 text-sm sm:text-base max-w-xl">
@@ -73,11 +73,11 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
             </p>
           </div>
 
-          {/* Filter Pills */}
-          <div className="flex flex-wrap items-center gap-1.5 bg-white p-1.5 rounded-2xl border border-stone-200 shadow-sm self-start md:self-auto">
+          {/* Filter Pills — 2-column centered grid on mobile, flex row on md+ */}
+          <div className="grid grid-cols-2 gap-1.5 bg-white p-1.5 rounded-2xl border border-stone-200 shadow-sm self-stretch md:self-auto md:flex md:flex-wrap md:items-center">
             <button
               onClick={() => setFilter("all")}
-              className={`cursor-pointer px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+              className={`cursor-pointer px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all w-full md:w-auto text-center whitespace-nowrap ${
                 filter === "all"
                   ? "bg-teal-600 text-white shadow-sm"
                   : "text-slate-600 hover:text-slate-900 hover:bg-stone-50"
@@ -87,7 +87,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
             </button>
             <button
               onClick={() => setFilter("cosmetic")}
-              className={`cursor-pointer px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+              className={`cursor-pointer px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all w-full md:w-auto text-center whitespace-nowrap ${
                 filter === "cosmetic"
                   ? "bg-teal-600 text-white shadow-sm"
                   : "text-slate-600 hover:text-slate-900 hover:bg-stone-50"
@@ -97,7 +97,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
             </button>
             <button
               onClick={() => setFilter("surgery")}
-              className={`cursor-pointer px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+              className={`cursor-pointer px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all w-full md:w-auto text-center whitespace-nowrap ${
                 filter === "surgery"
                   ? "bg-teal-600 text-white shadow-sm"
                   : "text-slate-600 hover:text-slate-900 hover:bg-stone-50"
@@ -107,7 +107,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
             </button>
             <button
               onClick={() => setFilter("ortho")}
-              className={`cursor-pointer px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+              className={`cursor-pointer px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all w-full md:w-auto text-center whitespace-nowrap ${
                 filter === "ortho"
                   ? "bg-teal-600 text-white shadow-sm"
                   : "text-slate-600 hover:text-slate-900 hover:bg-stone-50"

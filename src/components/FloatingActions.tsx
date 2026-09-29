@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import {
-  Calendar,
   Phone,
   ArrowUp,
   MessageCircle,
@@ -16,7 +15,6 @@ interface FloatingActionsProps {
 }
 
 export const FloatingActions: React.FC<FloatingActionsProps> = ({
-  onOpenBooking,
   onOpenCalculator,
   scrollY
 }) => {
@@ -112,24 +110,16 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({
           href={`tel:${CLINIC_INFO.phone.replace(/[^0-9]/g, "")}`}
           className="flex-1 py-2 px-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-slate-800 text-xs font-bold flex flex-col items-center justify-center gap-1"
         >
-          <Phone className="w-4 h-4 text-teal-600" />
+          <Phone className="w-4 h-4 text-teal-600 animate-blink" />
           <span>تماس فوری</span>
         </a>
 
         <button
           onClick={onOpenCalculator}
-          className="cursor-pointer flex-1 py-2 px-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 text-xs font-bold flex flex-col items-center justify-center gap-1"
+          className="cursor-pointer flex-[1.4] py-2 px-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white text-xs font-black shadow-md shadow-amber-600/25 flex items-center justify-center gap-1.5"
         >
-          <Calculator className="w-4 h-4 text-amber-600" />
+          <Calculator className="w-4 h-4 text-amber-100" />
           <span>محاسبه هزینه</span>
-        </button>
-
-        <button
-          onClick={onOpenBooking}
-          className="cursor-pointer flex-[1.4] py-2 px-3 rounded-xl bg-gradient-to-r from-teal-600 to-emerald-600 text-white text-xs font-black shadow-md shadow-teal-600/25 flex items-center justify-center gap-1.5"
-        >
-          <Calendar className="w-4 h-4 text-teal-100" />
-          <span>رزرو نوبت</span>
         </button>
       </div>
     </>

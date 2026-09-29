@@ -24,12 +24,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking, onOpenCalculator 
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-teal-500/10 blur-3xl pointer-events-none" />
 
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 relative z-10 text-right">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 relative z-10 text-center md:text-right">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
           
           {/* Brand Info (4 cols on lg) */}
           <div className="lg:col-span-4 space-y-5">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 justify-center md:justify-start">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-teal-500 to-emerald-600 flex items-center justify-center text-white shadow-lg shadow-teal-500/20">
                 <svg className="w-7 h-7 fill-current" viewBox="0 0 24 24">
                   <path d="M12 2C9.5 2 7 3.5 6 6C4.5 9.5 5 13.5 6 17.5C6.5 19.5 7.5 22 9.5 22C11 22 11.5 20 12 18C12.5 20 13 22 14.5 22C16.5 22 17.5 19.5 18 17.5C19 13.5 19.5 9.5 18 6C17 3.5 14.5 2 12 2Z" />
@@ -48,7 +48,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking, onOpenCalculator 
             </p>
 
             {/* Badges / Certifications */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-2">
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs text-stone-300">
                 <ShieldCheck className="w-4 h-4 text-teal-400" />
                 <span>مجوز رسمی وزارت بهداشت</span>
@@ -60,7 +60,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking, onOpenCalculator 
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex items-center justify-center md:justify-start gap-3 pt-2">
               <a
                 href={`https://wa.me/${CLINIC_INFO.whatsapp.replace(/[^0-9]/g, "")}`}
                 target="_blank"
@@ -101,7 +101,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking, onOpenCalculator 
                 <li key={s.id}>
                   <Link
                     to="/services"
-                    className="hover:text-teal-400 transition-colors flex items-center gap-1.5"
+                    className="hover:text-teal-400 transition-colors flex items-center gap-1.5 justify-center md:justify-start"
                   >
                     <ChevronLeft className="w-3.5 h-3.5 text-teal-500" />
                     <span>{s.title}</span>
@@ -119,6 +119,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking, onOpenCalculator 
             <ul className="space-y-2.5 text-xs text-stone-300">
               {[
                 { label: "درباره کلینیک دُرسا", href: "/about" },
+                { label: "نمونه کارها", href: "/portfolio" },
                 { label: "مقالات تخصصی", href: "/articles" },
                 { label: "تماس با ما", href: "/contact" },
                 { label: "پزشکان متخصص", href: "/doctors" },
@@ -128,7 +129,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking, onOpenCalculator 
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className="hover:text-teal-400 transition-colors flex items-center gap-1.5"
+                    className="hover:text-teal-400 transition-colors flex items-center gap-1.5 justify-center md:justify-start"
                   >
                     <ChevronLeft className="w-3.5 h-3.5 text-teal-500" />
                     <span>{link.label}</span>
@@ -145,29 +146,29 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking, onOpenCalculator 
             </h4>
 
             <div className="space-y-3 text-xs text-stone-300">
-              <div className="flex items-start gap-2.5">
+              <div className="flex items-start gap-2.5 justify-center md:justify-start">
                 <MapPin className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
                 <span className="leading-relaxed">{CLINIC_INFO.address}</span>
               </div>
 
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 justify-center md:justify-start">
                 <Phone className="w-4 h-4 text-teal-400 shrink-0" />
                 <span>تلفن تماس: {CLINIC_INFO.phone}</span>
               </div>
 
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 justify-center md:justify-start">
                 <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>پشتیبانی اورژانسی ۲۴ ساعته: {CLINIC_INFO.emergencyPhone}</span>
               </div>
 
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 justify-center md:justify-start">
                 <Clock className="w-4 h-4 text-teal-400 shrink-0" />
                 <span>ساعات کاری: {CLINIC_INFO.workingHours}</span>
               </div>
             </div>
 
-            {/* Quick Action in Footer */}
-            <div className="pt-2 flex flex-col sm:flex-row gap-2">
+            {/* Quick Action in Footer — always side-by-side in one row */}
+            <div className="pt-2 flex flex-row gap-2">
               <button
                 onClick={onOpenBooking}
                 className="cursor-pointer w-full py-2.5 px-4 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs transition-all shadow-md text-center"

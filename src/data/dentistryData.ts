@@ -239,6 +239,121 @@ export const BEFORE_AFTER_CASES: BeforeAfterCase[] = [
   }
 ];
 
+/**
+ * نمونه کارها — ۹ مورد از بهترین تحولات لبخند مراجعین دُرسا.
+ * زوج تصاویر before/after در کارت‌ها کنار هم نمایش داده می‌شوند.
+ */
+export const PORTFOLIO_CASES: BeforeAfterCase[] = [
+  {
+    id: "portfolio-1",
+    title: "طراحی لبخند هالیوودی با لمینت E-Max",
+    treatmentType: "لمینت سرامیکی فوق‌نازک",
+    patientAge: "۳۱ سال",
+    duration: "۲ جلسه (۵ روز کاری)",
+    doctor: "دکتر سارا رستمی",
+    description: "اصلاح فرم، رنگ و بستن فواصل دندانی با لمینت‌های با انعکاس نور طبیعی.",
+    beforeImg: "/images/smile-makeover-before.jpg",
+    afterImg: "/images/smile-makeover-after.jpg",
+    tags: ["لمینت E-Max", "طبیعی", "ماندگاری ۱۵ ساله"]
+  },
+  {
+    id: "portfolio-2",
+    title: "کامپوزیت ونیر نانوسرامیک یک‌روزه",
+    treatmentType: "میکرولیرینگ کامپوزیت",
+    patientAge: "۲۷ سال",
+    duration: "یک جلسه (۴ ساعت)",
+    doctor: "دکتر سارا رستمی",
+    description: "بازسازی لبه‌های ساییده و هم‌ترازی خط لبخند بدون تراش دندان.",
+    beforeImg: "/images/smile-makeover-before.jpg",
+    afterImg: "/images/smile-makeover-after.jpg",
+    tags: ["یک‌روزه", "بدون درد", "پالیش آینه‌ای"]
+  },
+  {
+    id: "portfolio-3",
+    title: "ایمپلنت فوری دیجیتال بدون جراحی",
+    treatmentType: "ایمپلنت اشترومن سوئیس",
+    patientAge: "۴۲ سال",
+    duration: "یک جلسه بدون بخیه",
+    doctor: "دکتر علیرضا خلیلی",
+    description: "کاشت دیجیتال با سرجیکال گاید و تحویل روکش موقت در همان روز.",
+    beforeImg: "/images/smile-makeover-before.jpg",
+    afterImg: "/images/smile-makeover-after.jpg",
+    tags: ["بدون برش لثه", "فوری", "گارانتی مادام‌العمر"]
+  },
+  {
+    id: "portfolio-4",
+    title: "لیفت لثه با لیزر + بلیچینگ هالیوودی",
+    treatmentType: "جراحی لیزری لثه و بلیچینگ",
+    patientAge: "۲۴ سال",
+    duration: "یک جلسه ۴۵ دقیقه‌ای",
+    doctor: "دکتر سارا رستمی",
+    description: "رفع لبخند لثه‌ای و روشن‌کردن ۷ شید رنگی مینا در یک جلسه.",
+    beforeImg: "/images/smile-makeover-before.jpg",
+    afterImg: "/images/smile-makeover-after.jpg",
+    tags: ["بدون خونریزی", "سفیدی درخشان", "ترمیم سریع"]
+  },
+  {
+    id: "portfolio-5",
+    title: "ارتودنسی نامرئی اینویزیلاین",
+    treatmentType: "الاینر شفاف دیجیتال",
+    patientAge: "۲۲ سال",
+    duration: "۸ ماه",
+    doctor: "دکتر علیرضا خلیلی",
+    description: "صاف‌کردن کامل به هم ریختگی دندان‌ها با پلاک‌های نامرئی و اسکن سه‌بعدی.",
+    beforeImg: "/images/smile-makeover-before.jpg",
+    afterImg: "/images/smile-makeover-after.jpg",
+    tags: ["نامرئی", "قابل جداکردن", "بدون سیم فلزی"]
+  },
+  {
+    id: "portfolio-6",
+    title: "ونیر سرامیکی فک بالا و پایین (۲۰ واحد)",
+    treatmentType: "ونیر زیرکونیا پریمیرا",
+    patientAge: "۳۵ سال",
+    duration: "۳ جلسه (۱۰ روز کاری)",
+    doctor: "دکتر سارا رستمی",
+    description: "بازسازی کامل لبخند با هماهنگی رنگ و فرم دندان‌های فک بالا و پایین.",
+    beforeImg: "/images/smile-makeover-before.jpg",
+    afterImg: "/images/smile-makeover-after.jpg",
+    tags: ["۲۰ واحد", "زیرکونیا", "هماهنگی کامل"]
+  },
+  {
+    id: "portfolio-7",
+    title: "درمان لبخند لثه‌ای با جراحی استخوانی",
+    treatmentType: "لیفت استخوانی فک قدامی",
+    patientAge: "۲۹ سال",
+    duration: "۲ جلسه",
+    doctor: "دکتر علیرضا خلیلی",
+    description: "اصلاح عمق لبخند لثه‌ای با جراحی ظریف و بازطراحی خط لبخند.",
+    beforeImg: "/images/smile-makeover-before.jpg",
+    afterImg: "/images/smile-makeover-after.jpg",
+    tags: ["لبخند لثه‌ای", "جراحی دیجیتال", "نتیجه پایدار"]
+  },
+  {
+    id: "portfolio-8",
+    title: "بلیچینگ عمیق + درمان پوسیدگی قدامی",
+    treatmentType: "بلیچینگ اولترادنت + کامپوزیت",
+    patientAge: "۳۸ سال",
+    duration: "۲ جلسه",
+    doctor: "دکتر سارا رستمی",
+    description: "سفیدکردن عمیق مینا و بازسازی دندان‌های آسیب‌دیده قدامی به‌صورت طبیعی.",
+    beforeImg: "/images/smile-makeover-before.jpg",
+    afterImg: "/images/smile-makeover-after.jpg",
+    tags: ["بلیچینگ", "ترمیم طبیعی", "۷ شید روشن‌تر"]
+  },
+  {
+    id: "portfolio-9",
+    title: "بازسازی کامل فک بی‌دندان با ایمپلنت آل-آن-فور",
+    treatmentType: "ایمپلنت آل-آن-فور + روکش سرامیکی",
+    patientAge: "۵۵ سال",
+    duration: "۴ جلسه (۳ هفته)",
+    doctor: "دکتر علیرضا خلیلی",
+    description: "تحویل کامل دندان‌های فک بالا و پایین روی ۸ ایمپلنت در یک روز.",
+    beforeImg: "/images/smile-makeover-before.jpg",
+    afterImg: "/images/smile-makeover-after.jpg",
+    tags: ["آل-آن-فور", "همان‌روز", "لبخند کامل"]
+  }
+];
+
 export const TESTIMONIALS: TestimonialItem[] = [
   {
     id: "t1",

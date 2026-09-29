@@ -20,6 +20,7 @@ import { ArticlesPage } from "./pages/ArticlesPage";
 import { ArticleDetailPage } from "./pages/ArticleDetailPage";
 import { AboutPage } from "./pages/AboutPage";
 import { ContactPage } from "./pages/ContactPage";
+import { PortfolioPage } from "./pages/PortfolioPage";
 import { ServiceItem } from "./data/dentistryData";
 
 export default function App() {
@@ -152,6 +153,12 @@ const AppShell = () => {
           <Route
             path="/doctors"
             element={<DoctorsPage onOpenBookingWithDoctor={handleOpenBookingWithDoctor} />}
+          />
+
+          {/* Portfolio — نمونه کارها (before/after gallery) */}
+          <Route
+            path="/portfolio"
+            element={<PortfolioPage onOpenBooking={handleOpenBooking} />}
           />
 
           {/* Expert articles */}

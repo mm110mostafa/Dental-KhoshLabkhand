@@ -62,8 +62,8 @@ export const SmileSlider: React.FC<SmileSliderProps> = ({ onOpenBooking }) => {
             اهرم وسط تصویر را به چپ و راست بکشید تا ظرافت و طبیعی‌بودن اصلاح فرم دندان‌ها، اصلاح رنگ و بستن فواصل را با چشمان خود مشاهده کنید.
           </p>
 
-          {/* Case switcher tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
+          {/* Case switcher tabs — 2-column grid on mobile, centered flex row on sm+ */}
+          <div className="grid grid-cols-2 gap-2 pt-2 sm:flex sm:flex-wrap sm:items-center sm:justify-center">
             {BEFORE_AFTER_CASES.map((item, idx) => (
               <button
                 key={item.id}
@@ -71,7 +71,7 @@ export const SmileSlider: React.FC<SmileSliderProps> = ({ onOpenBooking }) => {
                   setActiveCaseIndex(idx);
                   setSliderPosition(50);
                 }}
-                className={`cursor-pointer px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 ${
+                className={`cursor-pointer px-3 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 text-center w-full sm:w-auto ${
                   activeCaseIndex === idx
                     ? "bg-slate-900 text-white shadow-md shadow-slate-900/20"
                     : "bg-stone-100 text-slate-600 hover:bg-stone-200"

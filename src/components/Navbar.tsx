@@ -125,6 +125,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       megaMenu: SERVICE_MEGA_MENU
     },
     { label: "پزشکان", href: "/doctors" },
+    { label: "نمونه کارها", href: "/portfolio" },
     { label: "مقاله", href: "/articles" },
     { label: "درباره ما", href: "/about" },
     { label: "تماس با ما", href: "/contact" }

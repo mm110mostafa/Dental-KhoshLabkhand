@@ -28,6 +28,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const [quickPhone, setQuickPhone] = useState("");
   const [quickSuccess, setQuickSuccess] = useState(false);
 
+  // Disable scroll/mouse parallax on small screens so floating badges don't
+  // collide with the hero image / adjacent sections on mobile & tablet.
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(typeof window !== "undefined" && window.innerWidth < 1024);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (!heroRef.current) return;
@@ -59,10 +72,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     }, 4500);
   };
 
-  // Scroll parallax calculations
-  const heroParallaxY = scrollY * 0.18;
-  const floatingCardParallaxY = scrollY * -0.22;
-  const badgeParallaxY = scrollY * -0.12;
+  // Scroll parallax calculations (disabled on mobile/tablet to avoid overlap
+  // between floating badges and the hero image / neighbouring sections)
+  const heroParallaxY = isMobile ? 0 : scrollY * 0.18;
+  const floatingCardParallaxY = isMobile ? 0 : scrollY * -0.22;
+  const badgeParallaxY = isMobile ? 0 : scrollY * -0.12;
 
   return (
     <section
@@ -137,27 +151,27 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               در کلینیک تخصصی <strong className="text-slate-800 font-semibold">دُرسا</strong>، لبخند شما تنها ترمیم نمی‌شود؛ بلکه با بهره‌گیری از اسکنر سه‌بعدی دانمارکی و بدون تراش مینا، متناسب با هارمونی چهره و استانداردهای جهانی بازآفرینی می‌گردد.
             </p>
 
-            {/* Feature Bullets */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-1">
-              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-xl border border-stone-200/70 text-xs sm:text-sm text-slate-700">
+            {/* Feature Bullets: on mobile keep only two pills side-by-side (one line each) */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 pt-1">
+              <div className="hidden sm:flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-xl border border-stone-200/70 text-xs sm:text-sm text-slate-700">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span className="font-medium">بدون درد و بیحسی سوزنی</span>
+                <span className="font-medium whitespace-nowrap">بدون درد و بیحسی سوزنی</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-xl border border-stone-200/70 text-xs sm:text-sm text-slate-700">
+              <div className="flex items-center gap-1.5 sm:gap-2 bg-white/80 backdrop-blur-sm px-2 sm:px-3 py-2 rounded-xl border border-stone-200/70 text-[10.5px] sm:text-sm text-slate-700">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span className="font-medium">اسکن دیجیتال سه‌بعدی</span>
+                <span className="font-medium whitespace-nowrap">اسکن دیجیتال سه‌بعدی</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-xl border border-stone-200/70 text-xs sm:text-sm text-slate-700 col-span-2 sm:col-span-1">
+              <div className="flex items-center gap-1.5 sm:gap-2 bg-white/80 backdrop-blur-sm px-2 sm:px-3 py-2 rounded-xl border border-stone-200/70 text-[10.5px] sm:text-sm text-slate-700">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span className="font-medium">اقساط ۱۲ ماهه بدون کارمزد</span>
+                <span className="font-medium whitespace-nowrap">اقساط ۱۲ ماهه بدون کارمزد</span>
               </div>
             </div>
 
-            {/* Primary Action Buttons */}
+            {/* Primary Action Buttons: full-width booking CTA on mobile; calculator hidden on mobile */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <button
                 onClick={onOpenBooking}
-                className="cursor-pointer inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl font-bold text-sm sm:text-base text-white bg-gradient-to-r from-teal-600 via-teal-700 to-emerald-700 hover:from-teal-700 hover:to-emerald-800 shadow-lg shadow-teal-600/30 hover:shadow-xl hover:shadow-teal-600/40 active:scale-95 transition-all duration-200 group"
+                className="cursor-pointer w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl font-bold text-sm sm:text-base text-white bg-gradient-to-r from-teal-600 via-teal-700 to-emerald-700 hover:from-teal-700 hover:to-emerald-800 shadow-lg shadow-teal-600/30 hover:shadow-xl hover:shadow-teal-600/40 active:scale-95 transition-all duration-200 group"
               >
                 <Calendar className="w-5 h-5 text-teal-200 group-hover:rotate-12 transition-transform" />
                 <span>رزرو آنلاین وقت مشاوره و اسکن</span>
@@ -166,7 +180,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
               <button
                 onClick={onOpenCalculator}
-                className="cursor-pointer inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl font-bold text-sm sm:text-base text-slate-800 bg-white hover:bg-stone-50 border border-stone-200/90 shadow-sm hover:shadow-md transition-all active:scale-95 group"
+                className="cursor-pointer hidden sm:inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl font-bold text-sm sm:text-base text-slate-800 bg-white hover:bg-stone-50 border border-stone-200/90 shadow-sm hover:shadow-md transition-all active:scale-95 group"
               >
                 <Sparkles className="w-4 h-4 text-amber-500 group-hover:rotate-12 transition-transform" />
                 <span>محاسبه آنلاین هزینه لبخند</span>
@@ -267,9 +281,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             
             {/* The Main Real Photograph Hero Container */}
             <div
-              className="relative mx-auto max-w-md lg:max-w-none transition-transform duration-300 ease-out"
+              className="relative mx-auto max-w-md lg:max-w-none transition-transform duration-300 ease-out mt-3 mb-10 lg:my-0"
               style={{
-                transform: `perspective(1000px) rotateY(${mousePos.x * 8}deg) rotateX(${-mousePos.y * 8}deg) translateY(${heroParallaxY * 0.4}px)`
+                transform: `perspective(1000px) rotateY(${isMobile ? 0 : mousePos.x * 8}deg) rotateX(${isMobile ? 0 : -mousePos.y * 8}deg) translateY(${heroParallaxY * 0.4}px)`
               }}
             >
               {/* Decorative Frame Glow */}
@@ -310,7 +324,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
               {/* Floating Badge 1 (Top Left): Real Satisfaction Metric */}
               <div
-                className="absolute -top-5 -left-4 sm:-left-6 bg-white/95 backdrop-blur-xl p-3.5 rounded-2xl shadow-xl shadow-slate-900/10 border border-stone-200/80 flex items-center gap-3 transition-transform duration-500"
+                className="absolute -top-8 -left-3 sm:-top-5 sm:-left-6 bg-white/95 backdrop-blur-xl p-3.5 rounded-2xl shadow-xl shadow-slate-900/10 border border-stone-200/80 flex items-center gap-3 transition-transform duration-500"
                 style={{
                   transform: `translate3d(${mousePos.x * -20}px, ${mousePos.y * -20 + floatingCardParallaxY}px, 0)`
                 }}
@@ -331,7 +345,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
               {/* Floating Badge 2 (Bottom Right): 10-Year Warranty */}
               <div
-                className="absolute -bottom-5 -right-4 sm:-right-6 bg-white/95 backdrop-blur-xl p-3.5 rounded-2xl shadow-xl shadow-slate-900/10 border border-stone-200/80 flex items-center gap-3 transition-transform duration-500"
+                className="absolute -bottom-8 -right-3 sm:-bottom-5 sm:-right-6 bg-white/95 backdrop-blur-xl p-3.5 rounded-2xl shadow-xl shadow-slate-900/10 border border-stone-200/80 flex items-center gap-3 transition-transform duration-500"
                 style={{
                   transform: `translate3d(${mousePos.x * 20}px, ${mousePos.y * 20 + badgeParallaxY}px, 0)`
                 }}

@@ -9,15 +9,15 @@ interface AnnouncementBarProps {
 
 export const AnnouncementBar: React.FC<AnnouncementBarProps> = ({ onOpenSearch }) => {
   return (
-    <div className="relative overflow-hidden bg-gradient-to-r from-slate-900 via-teal-950 to-slate-900 text-white text-xs sm:text-sm py-2 px-3 border-b border-teal-800/40 z-50">
-      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+    <div className="relative overflow-hidden bg-gradient-to-r from-slate-900 via-teal-950 to-slate-900 text-white text-xs sm:text-sm py-1.5 md:py-2 px-3 border-b border-teal-800/40 z-50">
+      <div className="max-w-7xl mx-auto flex flex-nowrap md:flex-wrap items-center justify-between gap-2">
         {/* Left / Persian start: Promotional badge & notice */}
         <div className="flex items-center gap-2.5 overflow-hidden min-w-0">
           <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-gradient-to-r from-teal-500 to-emerald-400 text-slate-950 font-bold text-xs shadow-sm shadow-teal-500/20 shrink-0">
             <Sparkles className="w-3.5 h-3.5" />
             جشنواره بهاره
           </span>
-          <p className="text-stone-200 text-xs sm:text-sm truncate font-medium">
+          <p className="hidden md:block text-stone-200 text-xs sm:text-sm truncate font-medium">
             ویزیت و اسکن ۳ بعدی لبخند رایگان + ۲۰٪ تخفیف ویژه کامپوزیت و لمینت تا پایان هفته
           </p>
         </div>

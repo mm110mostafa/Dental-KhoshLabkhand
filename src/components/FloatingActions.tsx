@@ -108,7 +108,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({
       >
         <a
           href={`tel:${CLINIC_INFO.phone.replace(/[^0-9]/g, "")}`}
-          className="flex-1 py-2 px-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-slate-800 text-xs font-bold flex flex-col items-center justify-center gap-1"
+          className="shrink-0 py-1.5 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-slate-800 text-[11px] font-bold flex flex-row items-center justify-center gap-1.5"
         >
           <span className="relative inline-flex items-center justify-center">
             <span className="absolute -inset-1 rounded-full bg-teal-400/40 animate-ping" />

@@ -92,7 +92,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking, onOpenCalculator 
           </div>
 
           {/* Quick Links (3 cols on lg) */}
-          <div className="lg:col-span-3 space-y-4 text-left md:text-right">
+          <div className="lg:col-span-3 space-y-4">
             <h4 className="text-sm font-bold text-teal-300 border-b border-white/10 pb-2">
               خدمات اصلی کلینیک
             </h4>
@@ -101,7 +101,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking, onOpenCalculator 
                 <li key={s.id}>
                   <Link
                     to="/services"
-                    className="hover:text-teal-400 transition-colors flex items-center gap-1.5 justify-end md:justify-start"
+                    className="hover:text-teal-400 transition-colors flex items-center gap-1.5 justify-start"
                   >
                     <ChevronLeft className="w-3.5 h-3.5 text-teal-500" />
                     <span>{s.title}</span>
@@ -112,7 +112,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking, onOpenCalculator 
           </div>
 
           {/* Fast Access Links (2 cols on lg) */}
-          <div className="lg:col-span-2 space-y-4 text-left md:text-right">
+          <div className="lg:col-span-2 space-y-4">
             <h4 className="text-sm font-bold text-teal-300 border-b border-white/10 pb-2">
               دسترسی سریع
             </h4>
@@ -129,7 +129,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking, onOpenCalculator 
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className="hover:text-teal-400 transition-colors flex items-center gap-1.5 justify-end md:justify-start"
+                    className="hover:text-teal-400 transition-colors flex items-center gap-1.5 justify-start"
                   >
                     <ChevronLeft className="w-3.5 h-3.5 text-teal-500" />
                     <span>{link.label}</span>
@@ -140,28 +140,28 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking, onOpenCalculator 
           </div>
 
           {/* Clinic Contact & Hours (3 cols on lg) */}
-          <div className="lg:col-span-3 space-y-4 text-left md:text-right">
+          <div className="lg:col-span-3 space-y-4">
             <h4 className="text-sm font-bold text-teal-300 border-b border-white/10 pb-2">
               اطلاعات تماس و نشانی
             </h4>
 
             <div className="space-y-3 text-xs text-stone-300">
-              <div className="flex items-start gap-2.5 justify-end md:justify-start">
+              <div className="flex items-start gap-2.5 justify-start">
                 <MapPin className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
                 <span className="leading-relaxed">{CLINIC_INFO.address}</span>
               </div>
 
-              <div className="flex items-center gap-2.5 justify-end md:justify-start">
+              <div className="flex items-center gap-2.5 justify-start">
                 <Phone className="w-4 h-4 text-teal-400 shrink-0" />
                 <span>تلفن تماس: {CLINIC_INFO.phone}</span>
               </div>
 
-              <div className="flex items-center gap-2.5 justify-end md:justify-start">
+              <div className="flex items-center gap-2.5 justify-start">
                 <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>پشتیبانی اورژانسی ۲۴ ساعته: {CLINIC_INFO.emergencyPhone}</span>
               </div>
 
-              <div className="flex items-center gap-2.5 justify-end md:justify-start">
+              <div className="flex items-center gap-2.5 justify-start">
                 <Clock className="w-4 h-4 text-teal-400 shrink-0" />
                 <span>ساعات کاری: {CLINIC_INFO.workingHours}</span>
               </div>
